@@ -61,8 +61,9 @@ L2_error = fem.form(ufl.inner(uh - uex, uh - uex) * ufl.dx)              #ufl im
 error_local = fem.assemble_scalar(L2_error)                              #get scalar values
 error_L2 = np.sqrt(domain.comm.allreduce(error_local, op=MPI.SUM))       #gather all proscesses 
 
-error_max = np.max(np.abs(uD.x.array-uh.x.array))
+error_max = np.max(np.abs(uD.x.array-uh.x.array))                        # maximum error, note that we compare with uD since clearly uex has more DOF's
 # Only print the error on one process
 if domain.comm.rank == 0:
     print(f"Error_L2 : {error_L2:.2e}")
     print(f"Error_max : {error_max:.2e}")
+
