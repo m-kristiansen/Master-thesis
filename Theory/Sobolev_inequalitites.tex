@@ -1,0 +1,89 @@
+\documentclass[11pt, norsk, a4paper]{article}
+\usepackage{charter,graphicx}
+
+\usepackage{geometry}
+\geometry{legalpaper, margin=1in}
+
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+\setlength{\parindent}{0in}
+\usepackage{caption}
+\usepackage{braket}
+\usepackage{nccmath}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage[makeroom]{cancel}
+\usepackage{xcolor}
+
+\newcommand\norm[1]{\lVert#1\rVert}
+\newcommand\inner[1]{\langle#1\rangle}
+
+\title{Sobolev inequalities}
+\author{m.kristiansen}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Hölder's inequality}
+Let (X, A, $\mu$) be a measure space and assume that $p,q \in (1, \infty)$ are conjugate i.e. $\frac{1}{p} + \frac{1}{q} = 1$. If $f, g$ are measurable functions, then 
+\begin{align*}
+    \int |fg| d\mu \leq \norm{f}_{L^p}\norm{g}_{L^q}
+\end{align*}
+This is a generalization of the Cauchy-Schwartz inequality ($p,q = 2$). \\
+proof: see \cite{HIspaces}.
+
+\subsection*{Poincare type inequalities}
+\subsubsection*{Theorem 1}
+Assume $\Omega$ is a bounded, open subset of $\mathbb{R}^n$ and suppose $u \in W_0^{1,p}$ for some $p\in [1, n)$. Then we have the estimate 
+\begin{align*}
+    \norm{u}_{L^q(\Omega)} \leq C(p, q, n, \Omega)\norm{Du}_{L^p(\Omega)}
+\end{align*}
+for each $q \in [1, p^*]$, where $p^*$ is the Sobolev conjugate of $p$, $p^* := \frac{np}{n-p} > p$. \\
+proof: see \cite{PIevans}
+ 
+\subsubsection*{Theorem 2}
+Let $\Omega$ be a bounded, connected, open subset of $\mathbb{R^1}$ with a $C^1$ boundary $\partial \Omega$ and assume $p \in [1, \infty]$. Then, we have the estimate 
+\begin{align*}
+    \norm{u-(u)_\Omega}_{L^p} \leq C(n,p, \Omega) \norm{Du}_{L^p}
+\end{align*}
+for $u \in W^{1,p}$. $(u)_\Omega$ denotes the average of $u$ in $\Omega$. $(u)_\Omega := \frac{1}{|\Omega |} \int_\Omega u dx$. 
+Note that we do not demand trace zero in this inequality. 
+Proof: see \cite{PI2evans}
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{HIspaces}
+Spaces - An introduction to Real Analysis, Tom L. Lindstrøm, p.278
+
+\bibitem{PIevans}
+Partial Differential Equations, Lawrence C. Evans, p. 279
+
+\bibitem{PI2evans}
+Partial Differential Equations, Lawrence C. Evans, p. 290
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
