@@ -9,8 +9,9 @@ This readme will work as a workflow guide during the final masters year. It will
 - [ ] (maybe) Discuss how to better approximate the Poincare constant. 
 - [x] Create simple square grid with straigth line intersection.
 - [x] Implement solver. 
-- [ ] Evaluate with manufactured solutions. 
-- [ ] Compare expected and true convergence rates as a function of grid refinement with manufactured solutions. 
+- [x] Evaluate with manufactured solutions. 
+- [x] Compare expected and true convergence rates as a function of grid refinement with manufactured solutions. 
+- [ ] Evaluate the error while increasing the gamma factor. 
 - [ ] Consider a posteriori estimates. 
 - [ ] Implement Deep Ritz solver for the Poisson equation. 
 - [ ] ... 
